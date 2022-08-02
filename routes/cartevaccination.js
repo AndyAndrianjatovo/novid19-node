@@ -1,4 +1,4 @@
-let CarteVaccination = require("../model/Cartevaccination");
+let CarteVaccination = require("../model/cartevaccination");
 
 function getCarteVaccinations(req, res) {
   var aggregateQuery = CarteVaccination.aggregate();
