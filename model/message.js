@@ -11,7 +11,7 @@ let MessageSchema = Schema({
 });
 
 // Pour ajouter la pagination
-PersonneSchema.plugin(aggregatePaginate);
+MessageSchema.plugin(aggregatePaginate);
 
 // C'est à travers ce modèle Mongoose qu'on pourra faire le CRUD
 module.exports = mongoose.model("message", MessageSchema);
