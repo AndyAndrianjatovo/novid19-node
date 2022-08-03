@@ -20,7 +20,7 @@ function getPersonnes(req, res) {
 function getPersonne(req, res) {
   let personne_id = req.params.id;
 
-  Personne.findOne({ id: personne_id }, (err, personne) => {
+  Personne.findOne({ _id: personne_id }, (err, personne) => {
     if (err) {
       res.send(err);
     }

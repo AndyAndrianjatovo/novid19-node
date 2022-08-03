@@ -145,6 +145,22 @@ app
   .get(test.getTest)
   .delete(test.deleteTest);
 
+app
+  .route(prefix + "/testPersonne/:id")
+  .get(test.getTestByPersonne);
+
+app
+  .route(prefix + "/vaccinCarte/:id")
+  .get(vaccin.getVaccinByCarte);
+
+app
+  .route(prefix + "/cartePersonne/:id")
+  .get(cartev.getCarteByPersonne);
+
+app
+  .route(prefix + "/historiquePersonne/:id")
+  .get(historique.getHistoriqueByPersonne);
+
 // On démarre le serveur
 app.listen(port, "0.0.0.0");
 console.log("Serveur démarré sur http://localhost:" + port);

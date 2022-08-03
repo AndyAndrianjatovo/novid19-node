@@ -3,8 +3,8 @@ let Schema = mongoose.Schema;
 var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 
 let HistoriqueSchema = Schema({
-  lieu_id: Number,
-  personne_id: Number,
+  lieu_id: String,
+  personne_id: String,
   date_passage: Date,
 });
 

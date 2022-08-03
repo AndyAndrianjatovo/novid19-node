@@ -20,7 +20,7 @@ function getCarteVaccinations(req, res) {
 function getCarteVaccination(req, res) {
   let carte_id = req.params.id;
 
-  CarteVaccination.findOne({ id: carte_id }, (err, carte) => {
+  CarteVaccination.findOne({ _id: carte_id }, (err, carte) => {
     if (err) {
       res.send(err);
     }
@@ -60,12 +60,10 @@ function updateCarteVaccination(req, res) {
         res.json({ message: `${carteVaccination.personne_id} updated!` });
       }
 
-      // console.log('updated ', assignment)
     }
   );
 }
 
-// suppression d'un lieu (DELETE)
 function deleteCarteVaccination(req, res) {
   CarteVaccination.findByIdAndRemove(req.params.id, (err, carteVaccination) => {
     if (err) {
@@ -75,10 +73,23 @@ function deleteCarteVaccination(req, res) {
   });
 }
 
+function getCarteByPersonne(req, res) {
+  let personne_id = req.params.id;
+
+  CarteVaccination.find({ personne_id: personne_id }, (err, carte) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(carte);
+  });
+}
+
+
 module.exports = {
   getCarteVaccinations,
   getCarteVaccination,
   postCarteVaccination,
   updateCarteVaccination,
   deleteCarteVaccination,
+  getCarteByPersonne
 };

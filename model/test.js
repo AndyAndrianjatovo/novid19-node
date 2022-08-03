@@ -3,10 +3,10 @@ let Schema = mongoose.Schema;
 var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 
 let TestSchema = Schema({
-     id_test:Number,
+     id_test:String,
      date_test:Date,
-     centre_id:Number,
-     personne_id:Number,
+     centre_id:String,
+     personne_id:String,
      etat_test:Number,
 
 });

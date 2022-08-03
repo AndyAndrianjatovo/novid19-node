@@ -20,7 +20,7 @@ function getMessages(req, res) {
 function getMessage(req, res) {
   let message_id = req.params.id;
 
-  Message.findOne({ id: message_id }, (err, message) => {
+  Message.findOne({ _id: message_id }, (err, message) => {
     if (err) {
       res.send(err);
     }

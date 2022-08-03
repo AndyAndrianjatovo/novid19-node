@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 
 let PersonneSchema = Schema({
-  id_personne: Number,
+  id_personne: String,
   nom: String,
   prenom: String,
   mail: String,

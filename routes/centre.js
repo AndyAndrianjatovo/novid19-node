@@ -20,7 +20,7 @@ function getCentres(req, res) {
 function getCentre(req, res) {
   let centre_id = req.params.id;
 
-  Centre.findOne({ id: centre_id }, (err, centre) => {
+  Centre.findOne({ _id: centre_id }, (err, centre) => {
     if (err) {
       res.send(err);
     }

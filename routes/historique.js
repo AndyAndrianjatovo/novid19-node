@@ -20,7 +20,7 @@ function getHistoriques(req, res) {
 function getHistorique(req, res) {
   let historique_id = req.params.id;
 
-  Historique.findOne({ id: historique_id }, (err, historique) => {
+  Historique.findOne({ _id: historique_id }, (err, historique) => {
     if (err) {
       res.send(err);
     }
@@ -71,10 +71,23 @@ function deleteHistorique(req, res) {
   });
 }
 
+function getHistoriqueByPersonne(req, res) {
+  let personne_id = req.params.id;
+
+  Historique.find({ personne_id: personne_id }, (err, historique) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(historique);
+  });
+}
+
+
 module.exports = {
   getHistoriques,
   getHistorique,
   postHistorique,
   updateHistorique,
   deleteHistorique,
+  getHistoriqueByPersonne
 };

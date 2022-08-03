@@ -20,7 +20,7 @@ function getTests(req, res) {
 function getTest(req, res) {
   let test_id = req.params.id;
 
-  Test.findOne({ id: test_id }, (err, test) => {
+  Test.findOne({ _id: test_id }, (err, test) => {
     if (err) {
       res.send(err);
     }
@@ -70,10 +70,22 @@ function deleteTest(req, res) {
   });
 }
 
+function getTestByPersonne(req, res) {
+  let personne_id = req.params.id;
+
+  Test.find({ personne_id: personne_id }, (err, test) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(test);
+  });
+}
+
 module.exports = {
   getTests,
   getTest,
   postTest,
   updateTest,
   deleteTest,
+  getTestByPersonne
 };

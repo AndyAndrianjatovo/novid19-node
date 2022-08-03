@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 
 let Centrechema = Schema({
-  id_centre: Number,
+  id_centre: String,
   nom_centre: String,
   adresse_centre: String,
   coordonnees_centre: String,

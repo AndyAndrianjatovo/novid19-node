@@ -20,7 +20,7 @@ function getVaccins(req, res) {
 function getVaccin(req, res) {
   let vaccin_id = req.params.id;
 
-  Vaccin.findOne({ id: vaccin_id }, (err, vaccin) => {
+  Vaccin.findOne({ _id: vaccin_id }, (err, vaccin) => {
     if (err) {
       res.send(err);
     }
@@ -75,10 +75,23 @@ function deleteVaccin(req, res) {
   });
 }
 
+function getVaccinByCarte(req, res) {
+  let carte_id = req.params.id;
+
+  Vaccin.find({ carte_id: carte_id }, (err, vaccin) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(vaccin);
+  });
+}
+
+
 module.exports = {
   getVaccins,
   getVaccin,
   postVaccin,
   updateVaccin,
   deleteVaccin,
+  getVaccinByCarte
 };

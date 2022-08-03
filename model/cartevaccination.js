@@ -3,8 +3,8 @@ let Schema = mongoose.Schema;
 var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 
 let CarteVaccinationSchema = Schema({
-  id_carte: Number,
-  personne_id: Number,
+  id_carte: String,
+  personne_id: String,
 });
 
 // Pour ajouter la pagination

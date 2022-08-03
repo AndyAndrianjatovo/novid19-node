@@ -22,7 +22,7 @@ function getLieux(req, res) {
 function getLieu(req, res) {
   let lieu_id = req.params.id;
 
-  Lieu.findOne({ id: lieu_id }, (err, lieu) => {
+  Lieu.findOne({ _id: lieu_id }, (err, lieu) => {
     if (err) {
       res.send(err);
     }

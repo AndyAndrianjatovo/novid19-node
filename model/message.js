@@ -3,10 +3,10 @@ let Schema = mongoose.Schema;
 var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 
 let MessageSchema = Schema({
-  id_message: Number,
+  id_message: String,
   message: String,
-  personne_id: Number,
-  centre_id: Number,
+  personne_id: String,
+  centre_id: String,
   date_envoi: Date,
 });
 
