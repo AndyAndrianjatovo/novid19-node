@@ -161,6 +161,10 @@ app
   .route(prefix + "/historiquePersonne/:id")
   .get(historique.getHistoriqueByPersonne);
 
+app
+  .route(prefix + "/historiqueLieux/:id")
+  .get(historique.getHistoriqueByLieux);
+
 // On démarre le serveur
 app.listen(port, "0.0.0.0");
 console.log("Serveur démarré sur http://localhost:" + port);

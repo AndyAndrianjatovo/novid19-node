@@ -38,7 +38,7 @@ function postHistorique(req, res) {
   console.log("POST historique reçu :");
   console.log(historique);
 
-  lieu.save((err) => {
+  historique.save((err) => {
     if (err) {
       res.send("cant post historique ", err);
     }
@@ -82,6 +82,17 @@ function getHistoriqueByPersonne(req, res) {
   });
 }
 
+function getHistoriqueByLieux(req, res) {
+  let lieu_id = req.params.id;
+
+  Historique.find({ lieu_id: lieu_id }, (err, historique) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(historique);
+  });
+}
+
 
 module.exports = {
   getHistoriques,
@@ -89,5 +100,6 @@ module.exports = {
   postHistorique,
   updateHistorique,
   deleteHistorique,
-  getHistoriqueByPersonne
+  getHistoriqueByPersonne,
+  getHistoriqueByLieux,
 };
