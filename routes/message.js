@@ -75,10 +75,22 @@ function deleteMessage(req, res) {
   });
 }
 
+function getMessageByPersonne(req, res) {
+  let personne_id = req.params.id;
+
+  Message.find({ personne_id: personne_id }, (err, message) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(message);
+  });
+}
+
 module.exports = {
   getMessages,
   getMessage,
   postMessage,
   updateMessage,
   deleteMessage,
+  getMessageByPersonne,
 };
