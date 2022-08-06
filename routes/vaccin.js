@@ -6,7 +6,7 @@ function getVaccins(req, res) {
     aggregateQuery,
     {
       page: parseInt(req.query.page) || 1,
-      limit: parseInt(req.query.limit) || 10,
+      limit: parseInt(req.query.limit) || 1000,
     },
     (err, vaccins) => {
       if (err) {
@@ -86,12 +86,11 @@ function getVaccinByCarte(req, res) {
   });
 }
 
-
 module.exports = {
   getVaccins,
   getVaccin,
   postVaccin,
   updateVaccin,
   deleteVaccin,
-  getVaccinByCarte
+  getVaccinByCarte,
 };

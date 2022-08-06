@@ -6,7 +6,7 @@ function getTests(req, res) {
     aggregateQuery,
     {
       page: parseInt(req.query.page) || 1,
-      limit: parseInt(req.query.limit) || 10,
+      limit: parseInt(req.query.limit) || 1000,
     },
     (err, tests) => {
       if (err) {
@@ -87,5 +87,5 @@ module.exports = {
   postTest,
   updateTest,
   deleteTest,
-  getTestByPersonne
+  getTestByPersonne,
 };

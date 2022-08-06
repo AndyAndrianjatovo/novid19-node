@@ -6,7 +6,7 @@ function getCentres(req, res) {
     aggregateQuery,
     {
       page: parseInt(req.query.page) || 1,
-      limit: parseInt(req.query.limit) || 10,
+      limit: parseInt(req.query.limit) || 1000,
     },
     (err, centres) => {
       if (err) {

@@ -6,7 +6,7 @@ function getCarteVaccinations(req, res) {
     aggregateQuery,
     {
       page: parseInt(req.query.page) || 1,
-      limit: parseInt(req.query.limit) || 10,
+      limit: parseInt(req.query.limit) || 1000,
     },
     (err, cartes) => {
       if (err) {
@@ -59,7 +59,6 @@ function updateCarteVaccination(req, res) {
       } else {
         res.json({ message: `${carteVaccination.personne_id} updated!` });
       }
-
     }
   );
 }
@@ -84,12 +83,11 @@ function getCarteByPersonne(req, res) {
   });
 }
 
-
 module.exports = {
   getCarteVaccinations,
   getCarteVaccination,
   postCarteVaccination,
   updateCarteVaccination,
   deleteCarteVaccination,
-  getCarteByPersonne
+  getCarteByPersonne,
 };
