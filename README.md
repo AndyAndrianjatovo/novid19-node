@@ -2,11 +2,11 @@
 NOVID19 est un projet fait dans le cadre éducatif en tant que projet transversal (TPT) à l'ITUniversity.
 Ce projet est le web service fait en NodeJS.
 
-![novid](https://user-images.githubusercontent.com/55956913/183304817-d82831ca-b8be-4712-8b98-6d298b57908c.png)
-
-
 ## API et lien
 Base url https://calm-mesa-49918.herokuapp.com/
+
+![novid](https://user-images.githubusercontent.com/55956913/183304817-d82831ca-b8be-4712-8b98-6d298b57908c.png)
+
 
 ### Lieux
 
