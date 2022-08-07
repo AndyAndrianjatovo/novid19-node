@@ -3,6 +3,7 @@ NOVID19 est un projet fait dans le cadre éducatif en tant que projet transversa
 Ce projet est le web service fait en NodeJS.
 
 ## API et lien
+Base url https://calm-mesa-49918.herokuapp.com/
 
 ### Historique
 
